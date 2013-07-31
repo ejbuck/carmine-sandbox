@@ -16,4 +16,4 @@ puts "The id of the string object str is #{str.object_id}."
 puts "And the id of the integer 100 is #{100.object_id}."
 end
 
-load sampleid
+sampleid
