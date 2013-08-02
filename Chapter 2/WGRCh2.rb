@@ -62,3 +62,37 @@ p a, b, c
 end
 
 two_or_more(1,2,3,4,5)
+
+#This will result in a syntax error:
+def broken_args(x,*y,z=1)
+end
+
+#Because arguments have to go in a particular order-
+#Required (a), Default (b=1), Optional (*c). Possible orders:
+#R, D, O, R/D, R/O, D/O, R/D/O, R/D/O/R.
+
+#O before D doesn't work because Ruby won't know whether
+#there's enough left over to fill in the default before trying
+#to fill the sponge (Optional).
+#D or O before R doesn't work because the Required variables
+#need to be filled before Ruby knows whether D or O get to have
+#anything.
+
+
+#Local variables and variable assignment
+puts ""
+
+def say_goodbye
+x = "Goodbye"
+puts x
+end
+
+def start_here
+x = "Hello"
+puts x
+say_goodbye
+puts "Let's check whether x remained the same:"
+puts x
+end
+
+start_here
