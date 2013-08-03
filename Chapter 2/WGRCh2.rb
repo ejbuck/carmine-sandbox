@@ -1,5 +1,13 @@
 #WGR Chapter 2 notes
 
+=begin
+#####NOTES FOR NEXT S MEETING#######
+2.6.2 is confusing. :\ What dictates when a (which is 
+the same as b) changes, if b happens to change? I think
+I need a diagram and to talk it out.
+
+=end
+
 #All methods have outputs. puts always evaluates to false, 
 #which is why the second puts below won't show up:
 
