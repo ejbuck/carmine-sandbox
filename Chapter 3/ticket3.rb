@@ -26,9 +26,11 @@ end
 #There's a shorter way to assign attributes to a class, though:
 
 class Ticket
-	attr_reader :venue, :date, :price
-	end
-	attr_writer :price
+attr_reader :venue, :date, :price
+attr_writer :price
+def initialize(venue, date)
+	@venue = venue
+	@date = date
 	end
 end
 
