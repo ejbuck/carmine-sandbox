@@ -26,13 +26,20 @@ end
 #There's a shorter way to assign attributes to a class, though:
 
 class Ticket
-attr_reader :venue, :date, :price
-attr_writer :price
+attr_reader :venue, :date
+attr :price, true
 def initialize(venue, date)
 	@venue = venue
 	@date = date
 	end
 end
 
-
 #:foo = symbol
+
+=begin
+attr_accessor is equal to attr_reader and attr_writer.
+attr :foo, true is equal to attr_accessor.
+attr :foo is equal to attr_reader.
+attr is useful, but can only be set for one accessor at a time.
+=end
+
