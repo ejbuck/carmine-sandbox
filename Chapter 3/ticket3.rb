@@ -22,3 +22,15 @@ class Ticket
 		@price
 	end
 end
+
+#There's a shorter way to assign attributes to a class, though:
+
+class Ticket
+	attr_reader :venue, :date, :price
+	end
+	attr_writer :price
+	end
+end
+
+
+#:foo = symbol
