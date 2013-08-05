@@ -1,3 +1,5 @@
+#Topic: get/set methods, also known as read/write methods.
+
 =begin 
 Code previously established to create a Ticket class that
 includes attributes venue, date, and price; the ability to read venue
