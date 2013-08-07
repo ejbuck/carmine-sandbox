@@ -31,3 +31,17 @@ end
 #trees, but instead a way to get functions to the classes that need
 #them. The other major way to add functionality to classes is through
 #modules, which will be discussed in Chapter 4.
+
+#3.5.2 Object ancestry and the not-so-missing link: the Object class
+
+#Every class is a descendant of Object.
+
+class C
+end
+class D < C
+end
+
+puts D.superclass
+puts D.superclass.superclass
+
+
