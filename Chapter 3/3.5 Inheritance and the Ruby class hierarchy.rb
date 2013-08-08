@@ -44,4 +44,17 @@ end
 puts D.superclass
 puts D.superclass.superclass
 
+#3.5.3 El Viejo's older brother: BasicObject
+
+#BasicObject is the class within which Object resides.
+
+#A BasicObject instance has 7 instance methods.
+#An Object instance has 52 instance methods.
+
+#BasicObject is mostly for when you're working so close to the bone
+#that you're creating a sort of Ruby dialect, and you don't
+#necessarily want your objects to function the way that Object class
+#objects function.
+
+
 
