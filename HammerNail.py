@@ -1,4 +1,4 @@
-def bell(a, b, c, d, e, f, total):
+def bell(a, b, c, d, total):
     """
     Add together any of a, b, c, & d any number of times to equal total.
 
@@ -21,31 +21,57 @@ def bell(a, b, c, d, e, f, total):
     time considerably.
     """
     num_list=[a,b,c,d]
-    totnum=[]
+    tot_num_list=[]
+    sum_list=[]
+    sum_holder=0
+    compare_tot=0
     
     for a in num_list:
+        tot=[a]
+        if (tot_num_list.count(tot) == 0):
+            tot_num_list.append(tot)
+            print ("A", tot)
         for b in num_list:
+            tot=[a,b]
+            if (tot_num_list.count(tot) == 0):
+                tot_num_list.append(tot)
+                print ("B", tot)
             for c in num_list:
+                tot=[a,b,c]
+                tot.sort()
+                if (tot_num_list.count(tot) == 0):
+                    tot_num_list.append(tot)
+                    print ("C", tot)
                 for d in num_list:
+                    tot=[a,b,c,d]
+                    tot.sort()
+                    if (tot_num_list.count(tot) == 0):
+                        tot_num_list.append(tot)
+                        print ("D", tot)
                     for e in num_list:
+                        tot=[a,b,c,d,e]
+                        tot.sort()
+                        if (tot_num_list.count(tot) == 0):
+                            tot_num_list.append(tot)
+                            print ("E", tot)
                         for f in num_list:
                             tot=[a,b,c,d,e,f]
                             tot.sort()
-                            if (totnum.count(tot) == 0):
-                                totnum.append(tot)
-    for a in totnum:
-        tot = a[0]+a[1]+a[2]+a[3]+a[4]+a[5]
-        if tot == total:
-            print a, tot
+                            if (tot_num_list.count(tot) == 0):
+                                tot_num_list.append(tot)
+                                print ("F", tot)
+
+    for a in tot_num_list:
+        sum_list=a
+        for a in sum_list:
+            sum_holder=sum_holder+a
+        if sum_holder == total:
+            print (sum_list, sum_holder)
             print "SUCCESS!"
             print "*********************************************************"
-        elif a[0] == a[1] == a[2] == a[3] == a[4] == a[5] and a[0] == f:
-            print ""
-            print "========================================================="
-            print "Ending run."
+            sum_holder = 0
         else:
-            print a, tot
-            print "Failure."
+            print (sum_list, sum_holder)
+            sum_holder = 0
         
-
-bell(5,10,15,20,25,30,100)
+bell(5,10,15,20,100)
