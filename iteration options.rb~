@@ -1,0 +1,51 @@
+=begin
+I want a list of numbers adding up to the goal amount returned.
+
+Maybe it would be easier to do ANY number that adds up to the goal amount, within certain bounds? Hmm. That would mean generating the arrays and evaluating them in the same step. Maybe not, at least in this first go 'round.
+=end
+
+def bell (total, *nums)
+    for item in num_list:
+    
+
+
+
+
+a = 1
+
+while a <= 50
+    print a
+    a += 1
+end
+
+a = 1
+
+until a > 50
+    print a
+    a += 1
+end
+
+#a = 1
+
+#while a <= 50
+#   print a
+#   a += 1
+#end
+
+#until a > 50
+#    print a
+#    a += 1
+#end
+
+for a in 1..50
+    print a
+end
+
+counter = 1
+loop do
+  counter += 1
+  print "Ruby!"
+  break if counter > 30
+end
+
+30.times {print "Ruby!"}
