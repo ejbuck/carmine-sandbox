@@ -17,8 +17,11 @@ def bell(total, *nums)
   end
 
   @numlist.each do|combo|
-  	print combo, "\n"
-  end
+ 	tot = combo.inject(:+)
+ 	@totslist[tot] = combo
+  end  
+
+  @totslist.each {|k,v| print k," ",v, "\n"}
 end
 
 bell(10,1,2,3)
