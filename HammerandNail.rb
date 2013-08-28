@@ -5,6 +5,7 @@ Maybe it would be easier to do ANY number that adds up to the goal amount, withi
 =end
 
 @numlist = []
+@totslist = Hash.new
 
 def bell(total, *nums)
   nums.each do |a|
@@ -15,8 +16,9 @@ def bell(total, *nums)
     end
   end
 
-  print @numlist, "\n"
-
+  @numlist.each do|combo|
+  	print combo, "\n"
+  end
 end
 
 bell(10,1,2,3)
