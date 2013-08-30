@@ -19,13 +19,27 @@ def bell(total, *nums)
       @numlist << [a,b]
       nums.each do |c|
         @numlist << [a,b,c]
+        nums.each do |d|
+          @numlist << [a,b,c,d]
+          nums.each do |e|
+            @numlist << [a,b,c,d,e]
+            nums.each do |f|
+              @numlist << [a,b,c,d,e,f]
+              # nums.each do |g|   #This is the iteration where a significant pause for computation happens, leaving it commented out for now.
+              #   @numlist << [a,b,c,d,e,f,g]
+    #             nums.each do |h|
+    #               @numlist << [a,b,c,d,e,f,g,h]
+    #             end
+              # end
+            end
+          end
+        end
       end
     end
   end
 
   @numlist.each do|combo|
  	  tot = combo.inject(:+)
-    puts "combo #{combo} @total #{@total}"
     if tot == @total
       combo.sort!
       unless @totslist.include?(combo)
@@ -43,7 +57,7 @@ def bell(total, *nums)
   end
 end
 
-bell(10,1,2,6)
+bell(100,1,2,3,4,5,6,7,8,9)
       
 	  
     
