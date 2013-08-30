@@ -23,8 +23,11 @@ def bell(total, *nums)
  	  tot = combo.inject(:+)
     puts "tot = #{tot}, @total = #{@total}"
     if tot == @total
-      puts "Adding #{combo} to totslist."
- 	    @totslist << combo
+      combo.sort!
+      unless @totslist.include?(combo)
+        puts "Adding #{combo} to totslist."
+ 	      @totslist << combo
+      end
     end
   end
 
