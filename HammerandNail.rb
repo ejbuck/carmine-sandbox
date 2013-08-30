@@ -5,7 +5,7 @@ Maybe it would be easier to do ANY number that adds up to the goal amount, withi
 =end
 
 @numlist = []
-@totslist = Hash.new
+@totslist = []
 @total = 0
 
 def bell(total, *nums)
@@ -24,16 +24,15 @@ def bell(total, *nums)
     puts "tot = #{tot}, @total = #{@total}"
     if tot == @total
       puts "Adding #{combo} to totslist."
- 	    @totslist[tot] = combo
-    else
-      puts "Skip."
+ 	    @totslist << combo
     end
   end
 
   if @totslist.empty?
     puts "No solutions."
   else
-    @totslist.each {|k,v| print v, " equals ", k, "\n"}
+    puts "Solutions for #{@total} using a sum of any amount of #{nums}:"
+    @totslist.each {|a| print a, "\n"}
   end
 end
 
