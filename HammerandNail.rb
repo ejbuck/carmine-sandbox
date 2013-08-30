@@ -1,7 +1,10 @@
 =begin
 I want a list of numbers adding up to the goal amount returned.
 
-Maybe it would be easier to do ANY number that adds up to the goal amount, within certain bounds? Hmm. That would mean generating the arrays and evaluating them in the same step. Maybe not, at least in this first go 'round.
+Maybe it would be easier to do ANY number that adds up to the 
+goal amount, within certain bounds? Hmm. That would mean 
+generating the arrays and evaluating them in the same step. 
+Maybe not, at least in this first go 'round.
 =end
 
 @numlist = []
@@ -10,9 +13,10 @@ Maybe it would be easier to do ANY number that adds up to the goal amount, withi
 
 def bell(total, *nums)
   @total = total
-  puts @total
   nums.each do |a|
+    @numlist << [a]
     nums.each do |b|
+      @numlist << [a,b]
       nums.each do |c|
         @numlist << [a,b,c]
       end
@@ -21,7 +25,7 @@ def bell(total, *nums)
 
   @numlist.each do|combo|
  	  tot = combo.inject(:+)
-    puts "tot = #{tot}, @total = #{@total}"
+    puts "combo #{combo} @total #{@total}"
     if tot == @total
       combo.sort!
       unless @totslist.include?(combo)
