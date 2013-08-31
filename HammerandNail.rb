@@ -51,10 +51,10 @@ def bell(total, *nums)
   if @totslist.empty?
     puts "No solutions."
   else
-    @totslist.sort!.reverse!
+    @totslist.sort! {|a,b| b.length <=> a.length}
     puts "Solutions for #{@total} using a sum of any amount of #{nums}:"
     @totslist.each {|a| print a, "\n"}
   end
 end
 
-bell(100,10,20)
+bell(100,10,20,30,40,50)
