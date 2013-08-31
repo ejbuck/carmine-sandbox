@@ -14,17 +14,57 @@ Maybe not, at least in this first go 'round.
 def bell(total, *nums)
   @total = total
   nums.each do |a|
-    @numlist << [a]
+  if a == @total
+    unless @totslist.include?(a)
+      puts "Adding #{combo} to totslist."
+      @totslist << [a]
+    end
+  end
     nums.each do |b|
-      @numlist << [a,b]
+    tot = (a+b)
+    if tot == @total
+      combo = [a,b]
+      unless @totslist.include?(combo)
+        puts "Adding #{combo} to totslist."
+        @totslist << combo
+      end
+    end
       nums.each do |c|
-        @numlist << [a,b,c]
+      tot = (a+b+c)
+      if tot == @total
+        combo = [a,b,c]
+        unless @totslist.include?(combo)
+          puts "Adding #{combo} to totslist."
+          @totslist << combo
+        end
+      end
         nums.each do |d|
-          @numlist << [a,b,c,d]
+        tot = (a+b+c+d)
+        if tot == @total
+          combo = [a,b,c,d]
+          unless @totslist.include?(combo)
+            puts "Adding #{combo} to totslist."
+            @totslist << combo
+          end
+        end
           nums.each do |e|
-            @numlist << [a,b,c,d,e]
+          tot = (a+b+c+d+e)
+          if tot == @total
+            combo = [a,b,c,d,e]
+            unless @totslist.include?(combo)
+              puts "Adding #{combo} to totslist."
+              @totslist << combo
+            end
+          end
             nums.each do |f|
-              @numlist << [a,b,c,d,e,f]
+            tot = (a+b+c+d+e+f)
+            if tot == @total
+              combo = [a,b,c,d,e,f]
+              unless @totslist.include?(combo)
+                puts "Adding #{combo} to totslist."
+                @totslist << combo
+              end
+            end
               # nums.each do |g|   #This is the iteration where a significant pause for computation happens, leaving it commented out for now.
               #   @numlist << [a,b,c,d,e,f,g]
     #             nums.each do |h|
@@ -38,16 +78,16 @@ def bell(total, *nums)
     end
   end
 
-  @numlist.each do|combo|
- 	  tot = combo.inject(:+)
-    if tot == @total
-      combo.sort!
-      unless @totslist.include?(combo)
-        puts "Adding #{combo} to totslist."
- 	      @totslist << combo
-      end
-    end
-  end
+  # @numlist.each do|combo|
+ 	#   tot = combo.inject(:+)
+  #   if tot == @total
+  #     combo.sort!
+  #     unless @totslist.include?(combo)
+  #       puts "Adding #{combo} to totslist."
+ 	#       @totslist << combo
+  #     end
+  #   end
+  # end
 
   if @totslist.empty?
     puts "No solutions."
@@ -57,7 +97,7 @@ def bell(total, *nums)
   end
 end
 
-bell(100,1,2,3,4,5,6,7,8,9)
+bell(100,169,20,33,40,50)
       
 	  
     
