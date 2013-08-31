@@ -51,6 +51,7 @@ def bell(total, *nums)
   if @totslist.empty?
     puts "No solutions."
   else
+    @totslist.sort!.reverse!
     puts "Solutions for #{@total} using a sum of any amount of #{nums}:"
     @totslist.each {|a| print a, "\n"}
   end
