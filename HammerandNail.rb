@@ -1,10 +1,10 @@
 =begin
-I want a list of numbers adding up to the goal amount returned.
 
-Maybe it would be easier to do ANY number that adds up to the
-goal amount, within certain bounds? Hmm. That would mean
-generating the arrays and evaluating them in the same step.
-Maybe not, at least in this first go 'round.
+Function written to solve a puzzle in Blue Toad Mystery Files. There are
+four bells, marked with four numbers. In order to sound the alarm
+correctly, the numbers must add up to 100. The bells are
+allowed to be rung any number of times in order to reach 100.
+
 =end
 
 @totslist = []
@@ -22,6 +22,7 @@ end
 
 
 def bell(total, *nums)
+#Method prints combinations of nums that add up to total.
   @total = total
   nums.each do |a|
     evalmethod(a)
@@ -57,4 +58,4 @@ def bell(total, *nums)
   end
 end
 
-bell(100,10,20,30,40,50)
+bell(10, 1,2,3,4,5,6,7)
