@@ -7,7 +7,6 @@ generating the arrays and evaluating them in the same step.
 Maybe not, at least in this first go 'round.
 =end
 
-@numlist = []
 @totslist = []
 @total = 0
 
@@ -36,12 +35,12 @@ def bell(total, *nums)
             evalmethod(a,b,c,d,e)
             nums.each do |f|
               evalmethod(a,b,c,d,e,f)
-              # nums.each do |g| #This is the iteration where a significant pause for computation happens, leaving it commented out for now.
-              # @numlist << [a,b,c,d,e,f,g]
-    # nums.each do |h|
-    # @numlist << [a,b,c,d,e,f,g,h]
-    # end
-              # end
+              nums.each do |g| 
+                evalmethod(a,b,c,d,e,f,g)
+                  nums.each do |h|
+                    evalmethod(a,b,c,d,e,f,g,h)
+                end
+              end
             end
           end
         end
