@@ -14,22 +14,37 @@
     
 def word_rules_2(list)
     list.each do |word|
-        # if word.include? "q"
-        #     unless word.include? "qu"
-        #         list.delete(word)
-        #         @nope << word
-        #     else
-        #         word << @possibles
-        #     end
-        case word
-        when (word.rindex("v") == 2) then list.delete(word)
-        when (word.rindex("i") == 2) then list.delete(word)
-        when (word.include? "xs") then list.delete(word)
-        when (word.include? "jj") then list.delete(word)
-        when (word.include? "vv") then list.delete(word)
-        when (word.include? "kk") then list.delete(word)
-        when (word.include? "ww") then list.delete(word)
-        when (word.include? "xx") then list.delete(word)
+        if word.include? "q"
+            unless word.include? "qu"
+                list.delete(word)
+                @nope << word
+            else
+                word << @possibles
+            end
+        elsif word.rindex("v") == 2
+            list.delete(word)
+            @nope << word
+        elsif word.rindex("i") == 2
+            list.delete(word)
+            @nope << word
+        elsif word.include? "xs"
+            list.delete(word)
+            @nope << word
+        elsif word.include? "jj"
+            list.delete(word)
+            @nope << word
+        elsif word.include? "vv"
+            list.delete(word)
+            @nope << word
+        elsif word.include? "kk"
+            list.delete(word)
+            @nope << word
+        elsif word.include? "ww"
+            list.delete(word)
+            @nope << word
+        elsif word.include? "xx"
+            list.delete(word)
+            @nope << word
         else
             @probables << word
         end
@@ -58,7 +73,7 @@ end
     elsif word.include? "y"
         @possibles_y << word
     else
-        @nope << word                    
+        @nope << word
     end
 end
 
