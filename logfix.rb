@@ -1,29 +1,29 @@
 =begin
-This is code to fix the output from my logging app so I can get data graphed per day, cross reference, etc.
+This is code to fix the output from my logging app so I can get data graphed 
+per day, cross reference, etc.
 =end
 
 require 'csv'
 
 @csv = CSV.read("/home/clarity/Desktop/Bed Log.csv")
 @list = []
-@splitlist = []
 @hash = {}
+@splithash = {}
 
 @csv.each { |row| @list << row.to_a}
 
-@list.each { |array| array.each { |a| @splitlist << a.split("\n")}}
+print @list
+puts "================="
 
-@splitlist.each do |datum|
-	if datum.length == 5
-		keyhold = datum.to_sym
-	elsif datum == Array.try_convert(datum)
-		valhold = datum
-	end
-	@hash[keyhold] = valhold
+@list.each do |entry|
+	v = entry[0]
+	k = entry[1]
+	@hash[v] = k
 end
 
-print @hash
+@hash.each {|k,v| @splithash[k] = v.split("\n")}
 
+print @splithash
 puts ""
 
 
